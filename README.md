@@ -5,4 +5,4 @@ Optical-SAR image matching is a fundamental task for image fusion and visual nav
 ![zzz](overview.png "Magic Gardens")
 
 <center>The overview of the 3MOS dataset</center>
-*The complete image data of the dataset and the testing code will be made public after the publication of the article.*
+The complete image data of the dataset and the testing code are corrently only available from the corrresponding author, upon reasonable request, which will be made public after the publication of the paper.
