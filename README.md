@@ -154,6 +154,9 @@ Demo_template_matching
 
 **Notes:** The results may differ from those reported in the paper, as we converted the original PNG format data to JPG during data release. This conversion reduces the image file size but also slightly degrades the image signal-to-noise ratio. 
 
+## Training Your Network
+If you want to train your image matching models with the 3MOS dataset, it is recommended to follow our data splitting scheme. The image names for the training, validation, and test sets—divided by different satellites and scenes—are provided in the text files located in the  `./data_split` folder.
+
 ## License
 The 3MOS Dataset is released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en).
 
