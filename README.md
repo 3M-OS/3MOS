@@ -1,11 +1,12 @@
 # 3MOS Dataset: the First Multi-Source, Multi-Resolution, Multi-Scene Optical-SAR Dataset
 
- [**Dataset Link (Baidu NetDisk)**](https://pan.baidu.com/s/1QvwUu4CECaaTVe8KlkdhZg?pwd=wr7y)           [**Paper Link**](https://link.springer.com/article/10.1007/s44267-025-00091-0)
+ [**Dataset Link (Baidu NetDisk)**](https://pan.baidu.com/s/1QvwUu4CECaaTVe8KlkdhZg?pwd=wr7y)    
+ [**Paper Link**](https://link.springer.com/article/10.1007/s44267-025-00091-0)
 
 ## Overview
 The **3MOS dataset** is the first comprehensive multi-source, multi-resolution, and multi-scene optical-SAR image matching dataset, designed to address the generalization challenges in multimodal image matching. It consists of **113,000 optical-SAR image pairs** collected from five SAR satellites with resolutions ranging from **3.5 m to 12.5 m**, categorized into **eight distinct scenes** (urban, rural, plains, hills, mountains, water, desert, and frozen earth).
 
-<img src="assets\overview_01.png" alt="overview_01" style="zoom:80%;" />
+<img src="assets\overview_01.png" alt="overview_01" style="width: 550px; height: auto;">
 
 ## Key Features
 - **Multi-Source SAR Data**: Includes SAR imagery from five satellites: GF-3, ALOS, Sentinel-1, Radarsat, and RCM（RADARSAT
@@ -18,7 +19,7 @@ The **3MOS dataset** is the first comprehensive multi-source, multi-resolution, 
 
 - **High-Quality Ground Truth**: All pairs are manually registered by experts with sub-pixel accuracy.
 
-  <img src="assets\illustrate5_01.png" alt="illustrate5_01" style="zoom: 25%;" />
+<img src="assets\illustrate5_01.png" alt="illustrate5_01" style="width: 550px; height: auto;">
 
 ## Dataset Construction
 ### 1. Data Preprocessing
@@ -33,7 +34,7 @@ The **3MOS dataset** is the first comprehensive multi-source, multi-resolution, 
 
 - Average registration error: **<1 pixel** for most data.
 
- <img src="assets\new_register_01.png" alt="register" style="zoom: 25%;" />
+ <img src="assets\new_register_01.png" alt="register" style="width: 550px; height: auto;">
 
 ### 3. Image Cropping
 - Original images cropped into 256×256 patches with 50% overlap.
@@ -45,7 +46,7 @@ Scenes were defined using:
 
 - **Land cover** (Sentinel-2): Urban (high built-up density), Plains (vegetation-dominated), etc.
 
-<img src="assets\category_new_01.png" alt="category" style="zoom: 25%;" />
+<img src="assets\category_new_01.png" alt="category" style="width: 550px; height: auto;">
 
 ### 5. Data Splitting
 - Randomized split into training/validation/testing sets (6:2:2).
@@ -61,7 +62,7 @@ Scenes were defined using:
 
 - Models trained on diverse scenes perform robustly across different scenes.
 
-  ### 👁‍🗨👁‍🗨👁‍🗨**For comprehensive experimental results, detailed methodology, and complete analysis, please refer to the full research [paper](https://link.springer.com/article/10.1007/s44267-025-00091-0).**
+### 👁‍🗨👁‍🗨👁‍🗨**For comprehensive experimental results, detailed methodology, and complete analysis, please refer to the full research [paper](https://link.springer.com/article/10.1007/s44267-025-00091-0).**
 
 ## Downstream Applications
 🛰**Multimodal Change Detection**: High-precision optical-SAR image matching enables reliable multimodal change detection. 3MOS supports training of satellite-specific registration networks, enhancing robustness for disaster response applications including earthquake damage assessment and flood monitoring.
@@ -76,7 +77,7 @@ Scenes were defined using:
 
 ### Feature Matching Demo (Using [MINIMA](https://github.com/LSXI7/MINIMA?tab=readme-ov-file) Framework)
 
-This demonstration provides a complete workflow for evaluating feature matching methods on the 3MOS dataset using the MINIMA framework. In the experimental setup, random rotations (from −5$^\circ$ to 5$^\circ$) and translations (from −30 to 30 pixels) were applied to SAR images to assess method robustness. The corner error between images warped with the estimated rigid transformation matrix $\hat{R}$ and the ground truth $R$ was computed as a correctness measure. The area under the cumulative curve (AUC@T) was used as the evaluation metric, with threshold values of $T={3,5,10}$ pixels.
+This demonstration provides a complete workflow for evaluating feature matching methods on the 3MOS dataset using the MINIMA framework. In the experimental setup, random rotations (from −5° to 5°) and translations (from −30 to 30 pixels) were applied to SAR images to assess method robustness. The corner error between images warped with the estimated rigid transformation matrix $\hat{R}$ and the ground truth $R$ was computed as a correctness measure. The area under the cumulative curve (AUC@T) was used as the evaluation metric, with threshold values of $T={3,5,10}$ pixels.
 
 **1. Repository Setup & Environment Configuration & Weights Download**  
 
@@ -91,7 +92,7 @@ conda activate minima
 
 **2. Configuration Setup**
 
-Modify lines 189-190 in `.\MIR_master\MINIMA-main\src\config\default.py`:
+Modify lines 189-190 in `.\MINIMA-main\src\config\default.py`:
 
 ```
 _CN.TEST.IMG0_RESIZE = 256  # Changed from 640 to match test data
@@ -124,7 +125,7 @@ python demo_feature_matching.py \
 - `--data_base_path`: Path to extracted 3MOS dataset
 - `--test_data_file`: Index file containing test pairs
 
-**Notes:** Results may differ from paper stochastic nature of RANSAC process
+**Notes:** Results may differ from paper due to stochastic nature of RANSAC process
 
 ### Template Matching Demo
 
@@ -145,7 +146,7 @@ Ensure the MATLAB working directory contains the following files:
 | `txt_file_path`   | Test data index file path    | `'test_template_matching.txt'`          |
 | `satellite_types` | Satellite types to test      | `{'ALOS','GF3','SEN','RCM','Radarsat'}` |
 
-**3. Run the script with MATLAB ** 
+**3. Run the script with MATLAB**
 
 ```
 Demo_template_matching
@@ -154,7 +155,7 @@ Demo_template_matching
 **Notes:** The results may differ from those reported in the paper, as we converted the original PNG format data to JPG during data release. This conversion reduces the image file size but also slightly degrades the image signal-to-noise ratio. 
 
 ## License
-The 3MOS Dataset is released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** ([CC BY-NC-ND 4.0]([Deed - Attribution-NonCommercial-NoDerivatives 4.0 International - Creative Commons](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en))).
+The 3MOS Dataset is released under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en).
 
 ## Citation
 If you use the 3MOS dataset in your work, please cite:
@@ -172,6 +173,19 @@ If you use the 3MOS dataset in your work, please cite:
 }
 ```
 
+if you use the FFT-accelerated NCC (Normalized Cross-Correlation) algorithm, please cite:
+
+```
+@article{ye2024fast,
+  title={Fast and robust optical-to-SAR remote sensing image registration using region-aware phase descriptor},
+  author={Ye, Yibin and Wang, Qinwei and Zhao, Hong and Teng, Xichao and Bian, Yijie and Li, Zhang},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={62},
+  pages={1--12},
+  year={2024},
+  publisher={IEEE}
+}
+```
 ## Acknowledgements
 
 We sincerely thank European Space Agency (ESA), Canadian Space Agency, Japan Aerospace Exploration Agency (JAXA), and China Center for Resources Satellite Data and Application for their SAR imagery, and Google Earth for optical imagery. The Sentinel-1 data, sourced from ESA, is utilized under the [CC BY 4.0 license]( https://creativecommons.org/licenses/by/4.0/). The RCM data are provided by the RADARSAT Constellation Mission (RCM) © Government of Canada (2023). RADARSAT is an official mark of the Canadian Space Agency. Data were accessed under the Public User License Agreement (CSA-RC-AGR-0005 Rev 1.0). The Radarsat-2 data  were obtained through the Canadian program for Science and Operational Applications Research for Radarsat-2 (SOAR). The original ALOS-2 data, provided by JAXA, were used iunder the End User License Agreement (EULA). For Google Earth data, we use them in line with the principles of fair use and adhere to the [guidelines](https://www.google.com/permissions/geoguidelines/) on the official website.
