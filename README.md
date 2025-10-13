@@ -18,7 +18,7 @@ The **3MOS dataset** is the first comprehensive multi-source, multi-resolution, 
 
 - **High-Quality Ground Truth**: All pairs are manually registered by experts with sub-pixel accuracy.
 
-  <img src="C:\Users\CV\Desktop\3MOS_github\illustrate5_01.png" alt="illustrate5_01" style="zoom: 25%;" />
+  <img src="assets\illustrate5_01.png" alt="illustrate5_01" style="zoom: 25%;" />
 
 ## Dataset Construction
 ### 1. Data Preprocessing
@@ -33,7 +33,7 @@ The **3MOS dataset** is the first comprehensive multi-source, multi-resolution, 
 
 - Average registration error: **<1 pixel** for most data.
 
-  ![new_register_01](C:\Users\CV\Desktop\3MOS_github\new_register_01.png)
+  ![new_register_01](assets\new_register_01.png)
 
 ### 3. Image Cropping
 - Original images cropped into 256×256 patches with 50% overlap.
@@ -45,7 +45,7 @@ Scenes were defined using:
 
 - **Land cover** (Sentinel-2): Urban (high built-up density), Plains (vegetation-dominated), etc.
 
-  ![category_new_01](C:\Users\CV\Desktop\3MOS_github\category_new_01.png)
+  ![category_new_01](assets\category_new_01.png)
 
 ### 5. Data Splitting
 - Randomized split into training/validation/testing sets (6:2:2).
