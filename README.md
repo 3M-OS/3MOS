@@ -33,7 +33,7 @@ The **3MOS dataset** is the first comprehensive multi-source, multi-resolution, 
 
 - Average registration error: **<1 pixel** for most data.
 
-  ![new_register_01](assets\new_register_01.png)
+ <img src="assets\new_register_01.png" alt="register" style="zoom: 25%;" />
 
 ### 3. Image Cropping
 - Original images cropped into 256×256 patches with 50% overlap.
@@ -45,7 +45,7 @@ Scenes were defined using:
 
 - **Land cover** (Sentinel-2): Urban (high built-up density), Plains (vegetation-dominated), etc.
 
-  ![category_new_01](assets\category_new_01.png)
+<img src="assets\category_new_01.png" alt="category" style="zoom: 25%;" />
 
 ### 5. Data Splitting
 - Randomized split into training/validation/testing sets (6:2:2).
